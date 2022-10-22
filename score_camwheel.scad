@@ -1,4 +1,3 @@
-include <MCAD/2Dshapes.scad>;
 
 /*
 "Known dimensions":
@@ -104,18 +103,6 @@ function boss_retainer_height() = inches_to_millimeters(BOSS_RETAINER_HEIGHT_IN)
 function boss_retainer_fillet_radius() = inches_to_millimeters(BOSS_RETAINER_FILLET_RADIUS_IN);
 function bosses() = 3;
 function optimize_for_printing() = OPTIMIZE_FOR_PRINTING;
-
-translate([0, -40, 0]) {
-  rotate([0, 90, 0]) {
-    import("cam_2022.3mf");
-  }
-}
-
-translate([93, 0, -26.763]) {
-  rotate([0, 180, 0]) {
-    cylinder(d = 100, h = 2.69);
-  }
-}
 
 translate([0, 0, (cam_spacing() + cam_thickness()) * 0]) color(rgb(255, 135, 45)) score_camwheel_190_620_x();
 //translate([0, 0, (cam_spacing() + cam_thickness()) * 1]) color(rgb(135, 255, 45)) score_camwheel_190_548_x();
