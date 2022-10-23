@@ -34,6 +34,23 @@ Use the chart below to determine which cams are required for your game and check
 
 :memo: The 190-517-X model in this repo is based on a known working model provided by [Deverezieaux] and [cerebral3d]; however, the model in this repo does have some minor changes and has not been directly tested. The remaining models are based on a combination of the 517's general dimensions in addition to score motor diagrams uploaded to [IPDB].
 
+## Need something custom?
+
+These camwheels are fully parametric so you can change them however you like or even create new models. I've provided a template file and model viewer to help you get started:
+1. First, download [OpenSCAD] 2021.01 or newer. This is the 3D design software used to create these models.
+1. Next, you'll need to download a copy of this project. If you aren't familiar with git/GitHub, I recommend downloading the project as a zip:
+   1. Click green **Code** on the main page of this repository.
+   1. Select **Download ZIP**.
+   1. Unzip the contents somewhere on your computer.
+1. Launch OpenSCAD and open the included **model_viewer.scad**.
+1. Once open, select **Window** from the menu bar and choose **Customizer**. You should see several configuraion options appear on the right side.
+1. In the customizer panel, locate the **part** drop-down and select **Custom**.
+1. Now in your favorite text editor, open the included **custom_model_template.scad**.
+1. The file will provide guidance on how to change a camwheel's parameters. If you save any changes to the file while OpenSCAD is open it will automatically update to reflect your changes.
+1. When you're ready to print your model, first locate the **detail** drop-down in the customizer panel and change it to **Medium** or **High**. Depending on your computer's specs, OpenSCAD may freeze for several minutes while it processes the changes.
+1. Once OpenSCAD is responsive again, you'll need to render the model by pressing **F6** or by selecting **Design** from the main menu and choosing **Render**. Depending on your computer's specs, OpenSCAD may freeze for several minutes while it processes the changes.
+1. Once the render is complete, you can directly export an STL of the camwheel by either pressing **F7** or selecting **File**, hovering over **Export**, and choosing **Export as STL...**.
+
 [deverezieaux]: https://pinside.com/pinball/community/pinsiders/deverezieaux
 [cerebral3d]: mailto:cerebral3d@gmail.com
 [cerebral3d artstation]: https://www.artstation.com/pat_kesterson
@@ -41,6 +58,7 @@ Use the chart below to determine which cams are required for your game and check
 [report an issue]: https://github.com/charlesetd/pinball-score-camwheels/issues/new/choose
 [pinrepair motor]: http://www.pinrepair.com/em/index3.htm#motor
 [ipdb]: https://www.ipdb.org/search.pl
+[openscad]: https://openscad.org/downloads.html
 [190-620-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_620_X.scad
 [190-548-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_548_X.scad
 [190-518-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_518_X.scad

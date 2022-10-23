@@ -21,11 +21,12 @@ include<chicago_coin_190_517_X.scad>;
 include<chicago_coin_190_518_X.scad>;
 include<chicago_coin_190_548_X.scad>;
 include<chicago_coin_190_620_X.scad>;
+include<custom_model_template.scad>;
 
 /* [Preview Options] */
 
 // The cam model to display
-part = "chicago_coin_190_517_X"; // [chicago_coin_190_517_X:Chicago Coin 190-517-X,chicago_coin_190_518_X:Chicago Coin 190-518-X,chicago_coin_190_548_X:Chicago Coin 190-548-X,chicago_coin_190_620_X:Chicago Coin 190-620-X]
+part = "chicago_coin_190_517_X"; // [chicago_coin_190_517_X:Chicago Coin 190-517-X,chicago_coin_190_518_X:Chicago Coin 190-518-X,chicago_coin_190_548_X:Chicago Coin 190-548-X,chicago_coin_190_620_X:Chicago Coin 190-620-X,custom:Custom]
 
 // Choose whether to render the 3D model or a select 2D profile (profiles will take longer to render)
 profile = "3d"; // [3d:3D,bottom:Bottom Profile]
@@ -67,5 +68,7 @@ module select_part() {
     score_camwheel(specification = CHICAGO_COIN_190_548_X, optimize_for_fdm = optimize_for_fdm);
   } else if (part == "chicago_coin_190_620_X") {
     score_camwheel(specification = CHICAGO_COIN_190_620_X, optimize_for_fdm = optimize_for_fdm);
+  } else if (part == "custom") {
+    score_camwheel(specification = CUSTOM_MODEL, optimize_for_fdm = optimize_for_fdm);
   }
 }
