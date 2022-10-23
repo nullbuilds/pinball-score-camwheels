@@ -490,7 +490,7 @@ module score_camwheel(specification, optimize_for_fdm = false) {
   assert(collar_boss_diameter == 0 || collar_boss_diameter > shaft_diameter, "the camwheel collar boss diameter must either be zero or be greater than the shaft diameter");
   assert(collar_boss_height >= 0, "the camwheel collar boss height must not be negative");
   assert(collar_boss_recess_depth >= 0, "the camwheel collar recess depth must not be negative");
-  assert(collar_boss_recess_diameter >= collar_boss_diameter, "the camwheel collar recess diameter must at least be the diameter of the collar boss");
+  assert(collar_boss_recess_diameter >= collar_boss_diameter || collar_boss_recess_depth == 0, "the camwheel collar recess diameter must at least be the diameter of the collar boss unless the boss recess depth is zero");
   assert(set_screw_hole_diameter > 0, "the camwheel set screw hole diameter must be greater than zero");
   assert(set_screw_hole_offset > set_screw_hole_diameter / 2, "the camwheel set screw hole offset must be greater than the hole's radius");
   assert(set_screw_hole_offset < collar_height - set_screw_hole_diameter / 2, "the camwheel set screw hole offset must be less than the shaft collar's height minus the hole radius");
@@ -505,9 +505,9 @@ module score_camwheel(specification, optimize_for_fdm = false) {
   assert(support_spacing >= (support_base_diameter + collar_outer_diameter) / 2, "the camwheel support spacing must be at least as long as the combined radiuses of the support and shaft collar");
   assert(support_spacing <= wheel_minor_diameter - support_base_diameter / 2 - support_fillet_radius, "the camwheel support spacing must be no more than the radius of the camwheel minor diameter minus the radius of the support and its fillet");
   assert(support_retainer_outer_diameter > support_tip_diameter, "the camwheel support retainer ring diameter must be greater than the support tip diameter");
-  assert(support_retainer_height > 0, "the camwheel support retainer height must be greater than zero");
+  assert(support_retainer_height >= 0, "the camwheel support retainer height must be greater than zero");
   assert(support_retainer_fillet_radius >= 0, "the camwheel support fillet radius must not be negative");
-  assert(support_retainer_fillet_radius <= support_retainer_height, "the camwheel support retainer fillet radius must not be larger than the support retainer height");
+  assert(support_retainer_fillet_radius <= support_retainer_height || support_retainer_height == 0, "the camwheel support retainer fillet radius must not be larger than the support retainer height or the retainer height must be zero");
   assert(support_recess_depth >= 0, "the camwheel support recess depth must not be negative");
   assert(support_recess_diameter > support_tip_diameter, "the camwheel support recess diameter must be greater than the support tip diameter");
   assert(support_recess_diameter < support_retainer_outer_diameter, "the camwheel support recess diameter must be less than the support retainer diameter");
@@ -578,14 +578,16 @@ module score_camwheel(specification, optimize_for_fdm = false) {
             }
             
             // Support retainer rings
-            for(support_position = support_positions) {
-              translate(support_position) {
-                cylinder_with_fillet(
-                    base_diameter = support_retainer_outer_diameter,
-                    top_diameter = support_retainer_outer_diameter,
-                    height = support_retainer_height,
-                    fillet_radius = support_retainer_fillet_radius
-                );
+            if (support_retainer_height > 0) {
+              for(support_position = support_positions) {
+                translate(support_position) {
+                  cylinder_with_fillet(
+                      base_diameter = support_retainer_outer_diameter,
+                      top_diameter = support_retainer_outer_diameter,
+                      height = support_retainer_height,
+                      fillet_radius = support_retainer_fillet_radius
+                  );
+                }
               }
             }
           }
