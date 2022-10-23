@@ -23,7 +23,7 @@ use <score_camwheel.scad>;
 // https://www.twitch.tv/cerebral3d) for providing their own 3D model of the 190-517-X cam for me to
 // reference.
 CHICAGO_COIN_190_518_X = create_score_camwheel_specification(
-    model_name                      = "190-518-X",
+    label_text                      = "190-518-X",
     wheel_minor_diameter            = inches_to_millimeters(3 + 5/32),
     wheel_thickness                 = inches_to_millimeters(7/64),
     shaft_diameter                  = inches_to_millimeters(1/4),
