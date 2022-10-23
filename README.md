@@ -39,10 +39,10 @@ Use the chart below to determine which cams are required for your game and check
 These camwheels are fully parametric so you can change them however you like or even create new models. I've provided a template file and model viewer to help you get started:
 1. First, download [OpenSCAD] 2021.01 or newer. This is the 3D design software used to create these models.
 1. Next, you'll need to download a copy of this project. If you aren't familiar with git/GitHub, I recommend downloading the project as a zip:
-   1. Click green **Code** on the main page of this repository.
+   1. Click the green **Code** button on the main page of this repository.
    1. Select **Download ZIP**.
    1. Unzip the contents somewhere on your computer.
-1. Launch OpenSCAD and open the included **model_viewer.scad**.
+1. Launch OpenSCAD and open the included **model_viewer.scad** file.
 1. Once open, select **Window** from the menu bar and choose **Customizer**. You should see several configuraion options appear on the right side.
 1. In the customizer panel, locate the **part** drop-down and select **Custom**.
 1. Now in your favorite text editor, open the included **custom_model_template.scad**.
