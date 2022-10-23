@@ -37,7 +37,7 @@ CHICAGO_COIN_190_517_X = create_score_camwheel_specification(
     index_hole_spacing              = inches_to_millimeters(43/64),
     index_hole_boss_diameter        = inches_to_millimeters(8/32),
     index_hole_boss_height          = inches_to_millimeters(5/64),
-    index_hole_boss_fillet_radius   = inches_to_millimeters(1/16),
+    index_hole_boss_fillet_radius   = 0,
     cam_specifications = [for(angle = [0:2])
         create_cam_specification(
             size = inches_to_millimeters(5/32),
