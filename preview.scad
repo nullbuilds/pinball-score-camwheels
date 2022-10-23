@@ -4,7 +4,7 @@ include<chicago_coin_190_517_X.scad>;
 /* [Preview Options] */
 
 // The cam model to display
-part = "none"; // [none:<none>,chicago_coin_190_517_X:Chicago Coin 190-517-X]
+part = "chicago_coin_190_517_X"; // [chicago_coin_190_517_X:Chicago Coin 190-517-X]
 
 // Whether to remove features from the bottom of the camwheels to make them easier to reproduce on FDM 3D printers
 optimize_for_fdm = false;
@@ -15,7 +15,7 @@ detail = "low"; // [low:Low,medium:Medium,high:High]
 /* [Hidden] */
 
 $fa = detail == "high" ? 0.1 : detail == "medium" ? 1 : 12;
-$fs = detail == "high" ? 0.1 : detail == "medium" ? 1 : 2;
+$fs = detail == "high" ? 0.5 : detail == "medium" ? 1 : 2;
 
 build_part();
 
