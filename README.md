@@ -16,5 +16,5 @@ I'd like to thank [Deverezieaux] at the Vintage Arcade Preservation Society (VAP
 [cerebral3d]: mailto:cerebral3d@gmail.com
 [cerebral3d artstation]: https://www.artstation.com/pat_kesterson
 [cerebral3d twitch]: https://www.twitch.tv/cerebral3d
-[report an issue]: /issues/new/choose
+[report an issue]: https://github.com/charlesetd/pinball-score-camwheels/issues/new/choose
 [pinrepair motor]: http://www.pinrepair.com/em/index3.htm#motor
