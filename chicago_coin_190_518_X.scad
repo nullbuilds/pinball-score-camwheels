@@ -20,10 +20,10 @@ use <score_camwheel.scad>;
 
 // Thanks to Deverezieaux at the Vintage Arcade Preservation Society (VAPS) and at Pinside and
 // cerebral3d (cerebral3d@gmail.com, https://www.artstation.com/pat_kesterson,
-// https://www.twitch.tv/cerebral3d) for providing their own 3D model of this cam for me to
+// https://www.twitch.tv/cerebral3d) for providing their own 3D model of the 190-517-X cam for me to
 // reference.
-CHICAGO_COIN_190_517_X = create_score_camwheel_specification(
-    model_name                      = "190-517-X",
+CHICAGO_COIN_190_518_X = create_score_camwheel_specification(
+    model_name                      = "190-518-X",
     wheel_minor_diameter            = inches_to_millimeters(3 + 5/32),
     wheel_thickness                 = inches_to_millimeters(7/64),
     shaft_diameter                  = inches_to_millimeters(1/4),
@@ -52,13 +52,14 @@ CHICAGO_COIN_190_517_X = create_score_camwheel_specification(
     index_hole_boss_diameter        = inches_to_millimeters(7/32),
     index_hole_boss_height          = inches_to_millimeters(5/64),
     index_hole_boss_fillet_radius   = 0,
-    cam_specifications = [for(angle = [0:2])
-        create_cam_specification(
-            size = inches_to_millimeters(5/32),
-            start_angle = 120 * angle - 16.5,
-            engaged_span = 102,
-            ease_in_span = 6,
-            ease_out_span = 3
-        )
+    cam_specifications = [for(group_angle = [0:2])
+        for(cam_angle = [0:4])
+            create_cam_specification(
+                size = inches_to_millimeters(5/32),
+                start_angle = 120 * group_angle - cam_angle * 15 - 42.5,
+                engaged_span = 3,
+                ease_in_span = 6,
+                ease_out_span = 2
+            )
     ]
 );
