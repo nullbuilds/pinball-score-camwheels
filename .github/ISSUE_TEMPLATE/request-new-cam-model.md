@@ -4,7 +4,7 @@ about: Do you need a cam not already in the repo? Make a request here to have a 
   model added
 title: Request to add cam model
 labels: status/awaiting_triage, type/request
-assignees: charlesetd
+assignees: nullbuilds
 
 ---
 

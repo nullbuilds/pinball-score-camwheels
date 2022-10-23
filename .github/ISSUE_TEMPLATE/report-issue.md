@@ -3,7 +3,7 @@ name: Report Issue
 about: Report a problem with a cam (incorrect dimensions, etc)
 title: ''
 labels: status/awaiting_triage, type/defect
-assignees: charlesetd
+assignees: nullbuilds
 
 ---
 
