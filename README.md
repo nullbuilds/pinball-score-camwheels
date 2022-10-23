@@ -32,7 +32,7 @@ Use the chart below to determine which cams are required for your game and check
 | Chicago Coin | Sound Stage | [190-548-X]<br/>[190-518-X]<br/>[190-517-X]                 | No                     |
 | Chicago Coin | Juke Box    | [190-548-X]<br/>[190-518-X]<br/>[190-517-X]                 | No                     |
 
-:memo: The 190-517-X model in this repo is based on a known working model provided by [Deverezieaux] and [cerebral3d]; however, the model in this repo does have some minor changes and has not been directly tested.
+:memo: The 190-517-X model in this repo is based on a known working model provided by [Deverezieaux] and [cerebral3d]; however, the model in this repo does have some minor changes and has not been directly tested. The remaining models are based on a combination of the 517's general dimensions in addition to score motor diagrams uploaded to [IPDB].
 
 [deverezieaux]: https://pinside.com/pinball/community/pinsiders/deverezieaux
 [cerebral3d]: mailto:cerebral3d@gmail.com
