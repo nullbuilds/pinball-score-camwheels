@@ -475,6 +475,7 @@ module score_camwheel(specification, optimize_for_fdm = false) {
   supports = 3; // Hard-coded for now since I am not currently aware of any camwheel without 3 supports
   model_number_size = 3;
   model_number_depth = 0.5;
+  model_number_top_margin = 1;
   
   assert(wheel_minor_diameter > 0, "the camwheel minor diameter must be greater than zero");
   assert(wheel_thickness > 0, "the camwheel thickness must be greater than zero");
@@ -638,9 +639,9 @@ module score_camwheel(specification, optimize_for_fdm = false) {
     }
     
     // Model name badge
-    translate([0, -collar_outer_diameter / 2 - (support_spacing - collar_outer_diameter / 2) / 2, wheel_thickness - model_number_depth + epsilon()]) {
+    translate([0, -collar_outer_diameter / 2 - collar_fillet_radius - model_number_top_margin, wheel_thickness - model_number_depth + epsilon()]) {
       linear_extrude(height = model_number_depth, slices = 1) {
-        text(text = model_name, size = model_number_size, halign = "center", valign = "center");
+        text(text = model_name, size = model_number_size, halign = "center", valign = "top");
       }
     }
   }
