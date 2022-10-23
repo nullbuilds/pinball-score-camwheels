@@ -61,11 +61,11 @@ function get_specification_parameter_index(specification, parameter_name) = sear
 function get_specification_argument(specification, parameter_name) = specification[get_specification_parameter_index(specification, parameter_name)][1];
 
 /**
- * The name of the camwheel model name parameter in a camwheel specification.
+ * The name of the camwheel label parameter in a camwheel specification.
  * 
  * @return the parameter name
  */
-function score_camwheel_specification_model_name_parameter_name() = "model_name";
+function score_camwheel_specification_label_text_parameter_name() = "label_text";
 
 /**
  * The name of the camwheel minor diameter parameter in a camwheel specification.
@@ -273,7 +273,7 @@ function score_camwheel_specification_cam_specifications_parameter_name() = "cam
 /**
  * Creates a new score camwheel specification.
  * 
- * @param model_name the name of the cam wheel's model
+ * @param label_text optional text to inset into the camwheel
  * @param wheel_minor_diameter the diameter of the camwheel when it is not engaged in mm
  * @param wheel_thickness the thickness of the camwheel in mm
  * @param shaft_diameter the diameter of the score motor shaft in mm
@@ -315,7 +315,7 @@ function score_camwheel_specification_cam_specifications_parameter_name() = "cam
  * @param cam_specifications a list of specifications for each cam on the wheel
  */
 function create_score_camwheel_specification(
-    model_name,
+    label_text,
     wheel_minor_diameter,
     wheel_thickness,
     shaft_diameter,
@@ -345,7 +345,7 @@ function create_score_camwheel_specification(
     index_hole_boss_height,
     index_hole_boss_fillet_radius,
     cam_specifications) = [
-  [score_camwheel_specification_model_name_parameter_name(), model_name],
+  [score_camwheel_specification_label_text_parameter_name(), label_text],
   [score_camwheel_specification_wheel_minor_diameter_parameter_name(), wheel_minor_diameter],
   [score_camwheel_specification_wheel_thickness_parameter_name(), wheel_thickness],
   [score_camwheel_specification_shaft_diameter_parameter_name(), shaft_diameter],
@@ -441,7 +441,7 @@ function create_cam_specification(size, start_angle, engaged_span, ease_in_span,
  *   3D printer (default = false)
  */
 module score_camwheel(specification, optimize_for_fdm = false) {
-  model_name = get_specification_argument(specification, score_camwheel_specification_model_name_parameter_name());
+  label_text = get_specification_argument(specification, score_camwheel_specification_label_text_parameter_name());
   wheel_minor_diameter = get_specification_argument(specification, score_camwheel_specification_wheel_minor_diameter_parameter_name());
   wheel_thickness = get_specification_argument(specification, score_camwheel_specification_wheel_thickness_parameter_name());
   shaft_diameter = get_specification_argument(specification, score_camwheel_specification_shaft_diameter_parameter_name());
@@ -473,9 +473,9 @@ module score_camwheel(specification, optimize_for_fdm = false) {
   cam_specifications = get_specification_argument(specification, score_camwheel_specification_cam_specifications_parameter_name());
   total_height = wheel_thickness + max(collar_height + collar_boss_height, support_height) + max(index_hole_boss_height, support_retainer_height);
   supports = 3; // Hard-coded for now since I am not currently aware of any camwheel without 3 supports
-  model_number_size = 3;
-  model_number_depth = 0.5;
-  model_number_top_margin = 1;
+  label_size = 3;
+  label_depth = 0.5;
+  label_top_margin = 1;
   
   assert(wheel_minor_diameter > 0, "the camwheel minor diameter must be greater than zero");
   assert(wheel_thickness > 0, "the camwheel thickness must be greater than zero");
@@ -639,9 +639,9 @@ module score_camwheel(specification, optimize_for_fdm = false) {
     }
     
     // Model name badge
-    translate([0, -collar_outer_diameter / 2 - collar_fillet_radius - model_number_top_margin, wheel_thickness - model_number_depth + epsilon()]) {
-      linear_extrude(height = model_number_depth, slices = 1) {
-        text(text = model_name, size = model_number_size, halign = "center", valign = "top");
+    translate([0, -collar_outer_diameter / 2 - collar_fillet_radius - label_top_margin, wheel_thickness - label_depth + epsilon()]) {
+      linear_extrude(height = label_depth, slices = 1) {
+        text(text = label_text, size = label_size, halign = "center", valign = "top");
       }
     }
   }
