@@ -1,0 +1,3 @@
+# Ignore generated files
+*.obj
+*.3mf
