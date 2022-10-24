@@ -14,6 +14,10 @@ I'd like to thank [Deverezieaux] at the Vintage Arcade Preservation Society (VAP
 
 I'd also like to thank the [Internet Pinball Database][ipdb] for providing high quality photos and scans of some camwheels and their technical drawings.
 
+## Download
+
+STLs for all models are available on [Printables].
+
 ## Compatibility
 
 Use the chart below to determine which cams are required for your game and check if the models have been verified to work correctly.
@@ -59,7 +63,8 @@ These camwheels are fully parametric so you can change them however you like or 
 [pinrepair motor]: http://www.pinrepair.com/em/index3.htm#motor
 [ipdb]: https://www.ipdb.org/search.pl
 [openscad]: https://openscad.org/downloads.html
-[190-620-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_620_X.scad
-[190-548-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_548_X.scad
-[190-518-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_518_X.scad
-[190-517-X]: https://github.com/charlesetd/pinball-score-camwheels/blob/main/chicago_coin_190_517_X.scad
+[190-620-X]: https://www.printables.com/model/301803-pinball-score-camwheels/files
+[190-548-X]: https://www.printables.com/model/301803-pinball-score-camwheels/files
+[190-518-X]: https://www.printables.com/model/301803-pinball-score-camwheels/files
+[190-517-X]: https://www.printables.com/model/301803-pinball-score-camwheels/files
+[printables]: https://www.printables.com/model/301803-pinball-score-camwheels/files
